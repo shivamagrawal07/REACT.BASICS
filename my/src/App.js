@@ -93,29 +93,81 @@
 
 
 /////////////////////////////////////use context in react/////////////////////////////////////////////////////
-import './App.css';
-import React, {createContext} from 'react';
-import ChildA from './ChildA';
+// import './App.css';
+// import React, {createContext} from 'react';
+// import ChildA from './ChildA';
 
 //What is usecontext hook?
 //create, provider, usecontext
 //how to use it
-const data = createContext();
-const data1 = createContext();
+// const data = createContext();
+// const data1 = createContext();
+
+// function App(){
+//   const name = "shivam"
+//   const gender = "male"
+//   return(
+//     <>
+//     <data.Provider name={name}>
+//     <data1.Provider value={gender}>
+//     <ChildA/>
+//     </data1.Provider>
+//     </data.Provider>
+//     </>
+//    );
+// }
+
+// export default App;
+// export {data, data1}; 
+
+
+//////////////////////////////////////////use memo in react////////////////////////////////////////////////////
+// import './App.css';
+// import React, { useMemo, useState } from 'react';
+
+//What is usememo and why we use it?
+//How to use memo with example?
+
+// function App(){
+//   const [add, SetAdd]= useState(0);
+//   const [minus, SetMinus]= useState(100);
+
+//  const multipliclation = useMemo(function multiply(){
+//   console.log("*****************")
+//   return add*10;
+//  } ,[add])
+//   return(
+//     <div className = 'App'>
+//       <h1>Learning usememo</h1>
+//       {multiplication}<br/>
+//       <button onClick = {()=>SetAdd(add + 1)}>addition</button>
+//       <span>{add}</span><br/>
+
+//       <button onclick = {()=>SetMinus(minus - 1)}>subtraction</button>
+//       <span>{minus}</span>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+///////////////////////////////////////use callback in memo/////////////////////////////////////////////////////
+
+import './App.css';
+import React, {useState} from "react";
+
+//What is usecallback and why we use it?
+//How to use useCallback with example?
 
 function App(){
-  const name = "shivam"
-  const gender = "male"
+  const [add,Setadd]= useState(0);
   return(
-    <>
-    <data.Provider name={name}>
-    <data1.Provider value={gender}>
-    <ChildA/>
-    </data1.Provider>
-    </data.Provider>
-    </>
-   );
-}
+    <div className='App'>
+      <h1>Learning useCallback</h1>
+      <h1>{add}</h1>
+      <button onClick={()=>setAdd(add + 1)}>Addition</button>
+    </div>
+  )
+} 
 
-export default App;
-export {data, data1}; 
+// export default App;
